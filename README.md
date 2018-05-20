@@ -2,6 +2,10 @@
  Test if a font is available in users browser
 
 
+## Demo
+[Check out the example](https://rwoodr.github.io/fontcheck/) to see how it works.
+
+
 ## Usage
 ```javascript
 // Log true if font Consolas is available
@@ -9,12 +13,18 @@ console.log(fontCheck('Consolas'));
 ```
 
 
-## Requirements
-- none
+**Module import** (only required for module version)
+```javascript
+
+```
 
 
 ##### Manual install
-You can copy and paste the contents of fontcheck.js or fontcheck.min.js into your code. Or, save a copy of one of those files and use import.
+**Quick and easy:**
+Copy and paste the contents of fontcheck.js or fontcheck.min.js into your code and call fontCheck().
+
+**Module:**
+Save a copy of fontcheck-module.js or fontcheck-module.min.js in your js directory and import it in your code.
 
 
 ##### Yarn
@@ -25,7 +35,7 @@ $ yarn add fontcheck
 
 ### Alternatives
 
-I found plenty of alternatives, but I prefer my implementation.
+I use my own implementation, but here are some alternatives.
 
 * [available-fonts](https://github.com/orleika/available-fonts)
 * [JavaScript/CSS Font Detector](http://www.lalit.org/lab/javascript-css-font-detect/) - [archive](https://web.archive.org/web/20180103203605/http://www.lalit.org/lab/javascript-css-font-detect/)
