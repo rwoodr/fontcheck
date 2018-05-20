@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>fontcheck.js</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1 class="mb-4">fontcheck.js</h1>
+
+        <div class="row mb-4">
+            <div class="col h5">
+                This page demonstrates <a href="https://github.com/rwoodr/fontcheck">fontcheck.js</a>
+                which can be used to test if a specific font is available.
+                The example section checks a predefined array of fonts.
+                The text input can be used to check for any font.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>example</h1>
+                    </div>
+                    <div class="card-body" style="white-space: pre" id="autoCheck"></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>try it</h1>
+                    </div>
+                    <div class="card-body">
+                        <form id="checkForm">
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <input type="text" class="form-control" id="fontInput" placeholder="Enter font name">
+                                </div>
+                                <div class="col-auto">
+                                    <button type="submit" class="btn btn-primary" id="checkFontBtn">Check Font</button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col" id="checkResults"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    
+    <script src="fontcheck.js"></script>
+    <script>
+        $(function(){ 
+            let fontList = ['Consolas', 'NotAFont', 'Menlo', 'Courier New', 'Arial', 'Times', 'Helvetica'];
+            let result = {};
+
+            fontList.forEach(font => result[font] = fontCheck(font));
+
+            $("#autoCheck").html(JSON.stringify(result, null, 4));
+
+            $('#checkFontBtn').click(event => {
+                $('#checkResults').prepend('"' +
+                    $('#fontInput').val() + '": ' + fontCheck($('#fontInput').val()) + '<br>');
+            });
+
+            $("#checkForm").submit(event => false);
+        });
+    </script>
+</body>
+</html>

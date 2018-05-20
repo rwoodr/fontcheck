@@ -14,7 +14,7 @@
 function fontCheck(testFont) {
     "use strict";
 
-    // Base fonts from which  compare widths to test font
+    // Base fonts from which to compare widths against test font
     // Specify generic font and let the browser choose the exact font
     // These will be measured alone and set as a fallback to the test font
     // If test font not present tests will use fallback and have same widths
