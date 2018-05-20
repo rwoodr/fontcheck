@@ -15,21 +15,19 @@ console.log(fontCheck('Consolas'));
 
 **Module import** (only required for module version)
 ```javascript
-
+import fontCheck from './fontcheck-module.min.js';
 ```
 
 
-#### Manual install
+## Manual install
 **Quick and easy:**
-
 Copy and paste the contents of fontcheck.js or fontcheck.min.js into your code and call fontCheck().
 
 **Module:**
-
 Save a copy of fontcheck-module.js or fontcheck-module.min.js in your js directory and use `import` in your code.
 
 
-#### Yarn:
+## Yarn install:
 ```
 $ yarn add fontcheck
 ```
@@ -53,7 +51,7 @@ limitations under the License.
 
 ## Alternatives
 
-I use my own implementation, but here are some alternatives.
+Here are some alternatives if you want to keep looking:
 
 * [available-fonts](https://github.com/orleika/available-fonts)
 * [JavaScript/CSS Font Detector](http://www.lalit.org/lab/javascript-css-font-detect/) - [archive](https://web.archive.org/web/20180103203605/http://www.lalit.org/lab/javascript-css-font-detect/)

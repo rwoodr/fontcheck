@@ -71,6 +71,7 @@
             $('#checkFontBtn').click(event => {
                 $('#checkResults').prepend('"' +
                     $('#fontInput').val() + '": ' + fontCheck($('#fontInput').val()) + '<br>');
+                $('#fontInput').val('');
             });
 
             $("#checkForm").submit(event => false);
