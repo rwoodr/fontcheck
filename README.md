@@ -34,14 +34,14 @@ fontCheck.filterFonts(['Consolas', 'Menlo', 'Times New Roman'])
 
 
 ## Install
-`Simple function version`:
-Copy and paste the contents of fontcheck.min.js into your code
-*or*
+`Simple function version`:  
+Copy and paste the contents of fontcheck.min.js into your code  
+*or*  
 Save a copy of fontcheck.min.js and reference it in a `<script>` tag
 
 
-`Module version`:
-Save a copy of fontcheck-module.min.js and use `import` in your code.
+`Module version`:  
+Save a copy of fontcheck-module.min.js and use `import` in your code
 
 
 ## Yarn install module version
