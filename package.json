@@ -1,0 +1,16 @@
+{
+  "name": "fontcheck",
+  "version": "0.0.1",
+  "description": "Test if font or list of fonts are available in users browser",
+  "main": "fontcheck-module.js",
+  "files": ["fontcheck-module.js", "fontcheck-module.min.js"],
+  "repository": {
+  	"url": "https://github.com/rwoodr/fontcheck",
+    "type": "git"
+  },
+  "bugs": "https://github.com/rwoodr/fontcheck/issues",
+  "keywords": ["font", "check", "available"],
+  "author": "Robert Woodruff",
+  "license": "Apache-2.0",
+  "private": false
+}

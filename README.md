@@ -44,13 +44,13 @@ Save a copy of fontcheck.min.js and reference it in a `<script>` tag
 Save a copy of fontcheck-module.min.js and use `import` in your code
 
 
-## Yarn install module version
+## Yarn install (module version)
 ```
 $ yarn add fontcheck
 ```
 
 
-## License
+## Copyright
 Copyright 2018 Robert Woodruff
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -81,4 +81,4 @@ Here are the alternatives I tested before doing it myself:
 
 ## test-fonts.json
 
-The test-fonts.json file I am using for the demo page came from [orleika](https://github.com/orleika)/[available-fonts](https://github.com/orleika/available-fonts) which is published under the MIT License.
+The test-fonts.json file I am using for the demo page is Copyright 2016 [orleika](https://github.com/orleika)/[available-fonts](https://github.com/orleika/available-fonts) which is published under the MIT License.
