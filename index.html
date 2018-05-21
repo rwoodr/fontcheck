@@ -16,21 +16,30 @@
             <div class="col h5">
                 This page demonstrates <a href="https://github.com/rwoodr/fontcheck">fontcheck.js</a>
                 which can be used to test if a specific font is available.
-                The example section checks a predefined array of fonts.
+                The 'function' section checks a small list of fonts using fontcheck.min.js embedded in the page.
+                The 'module' section checks a larger list of fonts using fontcheck-module.js (via index.js).
                 The text input can be used to check for any font.
             </div>
         </div>
 
         <div class="row">
-            <div class="col-6">
+            <div class="col">
                 <div class="card">
                     <div class="card-header">
-                        <h1>example</h1>
+                        <h1>function</h1>
                     </div>
-                    <div class="card-body" style="white-space: pre" id="autoCheck"></div>
+                    <div class="card-body" style="white-space: pre" id="functionExample"></div>
                 </div>
             </div>
-            <div class="col-6">
+           <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h1>module</h1>
+                    </div>
+                    <div class="card-body" style="white-space: pre" id="moduleExample"></div>
+                </div>
+            </div>
+            <div class="col">
                 <div class="card">
                     <div class="card-header">
                         <h1>try it</h1>
@@ -42,7 +51,7 @@
                                     <input type="text" class="form-control" id="fontInput" placeholder="Enter font name">
                                 </div>
                                 <div class="col-auto">
-                                    <button type="submit" class="btn btn-primary" id="checkFontBtn">Check Font</button>
+                                    <button type="submit" class="btn btn-primary" id="checkFontBtn">Check</button>
                                 </div>
                             </div>
                         </form>
@@ -55,27 +64,35 @@
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     
-    <script src="fontcheck.js"></script>
+    <!-- Check some fonts with module version -->
+    <script type="module" src="index.js"></script>
+
+    <!-- Check some fonts with function version -->
     <script>
-        $(function(){ 
-            let fontList = ['Consolas', 'NotAFont', 'Menlo', 'Courier New', 'Arial', 'Times', 'Helvetica'];
+        $(function() {
+            // Create array of fonts to check
+            let fontList = ['Consolas', 'Not A Font', 'Menlo', 'Arial', 'Trebuchet MS'];
+            // Create object to store results
             let result = {};
-
+            // Test each font in the array with fontCheck()
             fontList.forEach(font => result[font] = fontCheck(font));
-
-            $("#autoCheck").html(JSON.stringify(result, null, 4));
-
-            $('#checkFontBtn').click(event => {
-                $('#checkResults').prepend('"' +
-                    $('#fontInput').val() + '": ' + fontCheck($('#fontInput').val()) + '<br>');
-                $('#fontInput').val('');
-            });
-
-            $("#checkForm").submit(event => false);
+            // Display the results
+            $("#functionExample").html(JSON.stringify(result, null, 4));
         });
+
+        /*
+         https://github.com/rwoodr/fontcheck
+         @author Robert Woodruff
+         @version 1.0.0
+         @license Apache-2.0
+         @function fontCheck
+         @param {string} testFont - The font to check for
+         @returns {boolean} - Font detected or not
+        */
+        function fontCheck(c){var a=document.createElement("canvas").getContext("2d");return["serif","sans-serif","monospace"].some(function(b){a.font="32px "+b;var d=a.measureText("abcdefghijklmnopqrstuvwxyz& #0123456789").width;a.font="32px "+c+","+b;b=a.measureText("abcdefghijklmnopqrstuvwxyz& #0123456789").width;return d!==b})};
     </script>
 </body>
 </html>
